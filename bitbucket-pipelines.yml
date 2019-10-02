@@ -1,0 +1,12 @@
+#DMM-Auto Admin Coding Standard Checker tool
+image: node:10.13.0
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - node
+        script: # Modify the commands below to build your repository.
+          - npm install yarn
+          - yarn install
+          - yarn lint
