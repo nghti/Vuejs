@@ -11,7 +11,7 @@
         <a-dropdown>
         <span class="action ant-dropdown-link user-dropdown-menu">
           <a-avatar icon="user"/>
-          <span> {{ user.last_name }}</span>
+<!--          <span> {{ user.last_name }}</span>-->
         </span>
           <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
             <a-menu-item>

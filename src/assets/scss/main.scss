@@ -1,8 +1,9 @@
 @charset "UTF-8";
 
 // 1. Vendors
-@import "node_modules/sass-mq/mq";
+@import "~sass-mq/mq";
 @import "vendors/mq";
+@import "~toastr";
 
 // 2. Configuration and helpers
 @import "abstracts/variables";
