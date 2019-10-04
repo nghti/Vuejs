@@ -3,8 +3,6 @@ import Router from 'vue-router'
 
 import Helpers from '../utils/helpers'
 import BaseLayout from '../layouts/BaseLayout'
-// import AssessmentRoute from './modules/assessments'
-// import OrderRoute from './modules/orders'
 import DashboardRoute from './modules/dashboard'
 import AuthRoute from './modules/auth'
 
@@ -18,8 +16,6 @@ const AdminRoutes = [
     component: BaseLayout,
     children: [
       DashboardRoute,
-      // AssessmentRoute,
-      // OrderRoute
     ]
   },
   AuthRoute,

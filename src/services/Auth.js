@@ -12,10 +12,6 @@ class AuthService {
   logout () {
     return Client().post(`${this.uri}/logout`)
   }
-
-  profile () {
-    return Client().get(`${this.uri}/me`)
-  }
 }
 
 export default new AuthService()

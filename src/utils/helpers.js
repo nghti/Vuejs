@@ -13,17 +13,17 @@ export default {
     localStorage.removeItem(TOKEN_KEY)
   },
 
-  saveAuthInfo: (user) => {
-    localStorage.setItem(AUTH_INFO, JSON.stringify(user))
-  },
+  // saveAuthInfo: (user) => {
+  //   localStorage.setItem(AUTH_INFO, JSON.stringify(user))
+  // },
 
   // getAuthInfo: () => {
   //   return JSON.parse(localStorage.getItem(AUTH_INFO))
   // },
 
-  removeAuthInfo: () => {
-    localStorage.removeItem(AUTH_INFO)
-  },
+  // removeAuthInfo: () => {
+  //   localStorage.removeItem(AUTH_INFO)
+  // },
 
   getBaseApiUrl () {
     return `${process.env.VUE_APP_BASE_API_URL}/api` || 'http://localhost/api'

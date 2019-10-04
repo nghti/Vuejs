@@ -2,8 +2,7 @@
   <a-layout-header class="layout-header">
     <a-icon
       class="trigger"
-      :type="menuType"
-      @click.prevent="collapseSideBar"
+      type="menuType"
     />
 
     <div class="user-wrapper">
@@ -11,11 +10,11 @@
         <a-dropdown>
         <span class="action ant-dropdown-link user-dropdown-menu">
           <a-avatar icon="user"/>
-<!--          <span> {{ user.last_name }}</span>-->
+          <span> Admin</span>
         </span>
           <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
             <a-menu-item>
-              <a href="javascript:;" @click.prevent="logout">
+              <a href="javascript:;" @click.prevent="handleLogout">
                 <a-icon type="logout"/>
                 <span> ログアウト</span>
               </a>
@@ -28,7 +27,7 @@
 </template>
 
 <script>
-  import { mapActions, mapState } from 'vuex'
+  import { mapActions } from 'vuex'
   import avatar from '../../assets/images/no-gravatar.png'
 
   export default {
@@ -38,16 +37,11 @@
         avatar
       }
     },
-    computed: {
-      ...mapState('app', { collapsed: 'collapsedSideBar' }),
-      ...mapState('auth', { user: 'authInfo' }),
-      menuType () {
-        return this.collapsed ? 'menu-unfold' : 'menu-fold'
-      }
-    },
     methods: {
-      ...mapActions('app', ['collapseSideBar']),
       ...mapActions('auth', ['logout']),
+      handleLogout () {
+        this.logout()
+      },
     }
   }
 </script>
