@@ -1,16 +1,14 @@
 <template>
   <div class="main">
     <div class="logo">
-      <img src="../../assets/images/logo.png" alt="">
-      <p>DMM Auto 管理画面へログインしてください</p>
+      <img :class="ChangeName" src="../../assets/images/logo.png" alt="">
+      <p :class="{active: isActive}">{{ChangeName}}</p>
     </div>
 
     <a-form
       id="formLogin"
       class="user-layout-login"
       ref="formLogin"
-      :form="form"
-      @submit.prevent="handleSubmit"
     >
       <a-form-item>
         <a-input
@@ -47,8 +45,6 @@
           type="primary"
           htmlType="submit"
           class="login-button"
-          :loading="state.loginBtn"
-          :disabled="state.loginBtn"
         >ログイン
         </a-button>
       </a-form-item>
@@ -57,28 +53,20 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-
   export default {
-    name: 'login',
     data () {
       return {
-        form: this.$form.createForm(this),
-        state: {
-          time: 60,
-          loginBtn: false,
-        }
+        isActive: true,
+        error: true,
+        className: 'tu'
       }
     },
-    methods: {
-      ...mapActions('auth', ['login']),
-      handleSubmit () {
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            this.login(values)
-          }
-        })
-      },
+    computed: {
+      ChangeName () {
+        return {
+          'text-danger': this.error
+        }
+      }
     }
   }
 </script>

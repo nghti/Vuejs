@@ -1,15 +1,14 @@
 <template>
   <div class="main">
     <div class="logo">
-      <img src="../../assets/images/logo.png" alt="">
-      <p>DMM Auto 管理画面へログインしてください</p>
+      <img @click="doThis" src="../../assets/images/logo.png" alt="">
+      <p>{{nameChange}}</p>
     </div>
 
     <a-form
       id="formLogin"
       class="user-layout-login"
       ref="formLogin"
-      :form="form"
       @submit.prevent="handleSubmit"
     >
       <a-form-item>
@@ -47,8 +46,6 @@
           type="primary"
           htmlType="submit"
           class="login-button"
-          :loading="state.loginBtn"
-          :disabled="state.loginBtn"
         >ログイン
         </a-button>
       </a-form-item>
@@ -57,28 +54,36 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
-
   export default {
-    name: 'login',
     data () {
       return {
-        form: this.$form.createForm(this),
-        state: {
-          time: 60,
-          loginBtn: false,
-        }
+        nameLogo: 'DMM Auto 管理画面へログインしてください'
+      }
+    },
+    created () {
+      console.log('log create', document.getElementsByClassName('main')[0])
+    },
+    mounted () {
+      console.log('log mounted', document.getElementsByClassName('main')[0])
+    },
+    computed: {
+      // một computed getter
+      nameChange () {
+        return this.nameLogo.split('').reverse().join('')
+      }
+    },
+    watch: {
+      nameChange () {
+        console.log('change')
       }
     },
     methods: {
-      ...mapActions('auth', ['login']),
-      handleSubmit () {
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            this.login(values)
-          }
-        })
+      doThis () {
+        this.nameLogo = 'New name'
       },
+      handleSubmit () {
+        console.log('haha')
+      }
     }
   }
 </script>
