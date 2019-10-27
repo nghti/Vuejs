@@ -7,6 +7,8 @@
       id="formLogin"
       class="user-layout-login"
       ref="formLogin"
+      :form="form"
+      @submit.prevent="handleSubmit"
     >
       <a-form-item>
         <a-input
@@ -60,31 +62,36 @@
   import { mapState, mapActions } from 'vuex'
 
   export default {
-    data() {
+    data () {
       return {
+        form: this.$form.createForm(this),
         toggle: true,
       }
     },
-    created() {
+    created () {
       this.getUsers()
     },
-    mounted() {
+    mounted () {
 
     },
     computed: {
       ...mapState('dashboard', ['users']),
-      lists() {
-          return this.toggle = false
+      lists () {
+        return this.toggle
       }
     },
     methods: {
       ...mapActions('dashboard', ['getUsers']),
-      handleToggle() {
-        if(this.toggle === true) {
-          this.toggle = false
-        } else {
-          this.toggle = true
-        }
+      ...mapActions('auth', ['login']),
+      handleToggle () {
+        this.toggle = !this.toggle
+      },
+      handleSubmit () {
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            this.login(values)
+          }
+        })
       }
     }
   }
