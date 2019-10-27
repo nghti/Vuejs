@@ -47,47 +47,11 @@
         </a-button>
       </a-form-item>
     </a-form>
-    <div>
-      <h2 @click="handleToggle">tieu de</h2>
-      <p v-show="toggle">noi dung toggle</p>
-    </div>
-    {{lists}}<br/>
-    {{users}}
   </div>
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex'
 
-  export default {
-    data() {
-      return {
-        toggle: true,
-      }
-    },
-    created() {
-      this.getUsers()
-    },
-    mounted() {
-
-    },
-    computed: {
-      ...mapState('dashboard', ['users']),
-      lists() {
-          return this.toggle = false
-      }
-    },
-    methods: {
-      ...mapActions('dashboard', ['getUsers']),
-      handleToggle() {
-        if(this.toggle === true) {
-          this.toggle = false
-        } else {
-          this.toggle = true
-        }
-      }
-    }
-  }
 </script>
 
 <style lang="scss" scoped>
