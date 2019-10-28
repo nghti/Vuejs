@@ -1,14 +1,13 @@
 <template>
   <div class="main">
     <div class="logo">
-      <img @click="doThis" src="../../assets/images/logo.png" alt="">
-      <p>{{nameChange}}</p>
+      <img src="../../assets/images/logo.png" alt="">
     </div>
-
     <a-form
       id="formLogin"
       class="user-layout-login"
       ref="formLogin"
+      :form="form"
       @submit.prevent="handleSubmit"
     >
       <a-form-item>
@@ -50,39 +49,49 @@
         </a-button>
       </a-form-item>
     </a-form>
+    <div>
+      <h2 @click="handleToggle">tieu de</h2>
+      <p v-show="toggle">noi dung toggle</p>
+    </div>
+    {{lists}}<br/>
+    {{users}}
   </div>
 </template>
 
 <script>
+  import { mapState, mapActions } from 'vuex'
+
   export default {
     data () {
       return {
-        nameLogo: 'DMM Auto 管理画面へログインしてください'
+        form: this.$form.createForm(this),
+        toggle: true,
       }
     },
     created () {
-      console.log('log create', document.getElementsByClassName('main')[0])
+      this.getUsers()
     },
     mounted () {
-      console.log('log mounted', document.getElementsByClassName('main')[0])
+
     },
     computed: {
-      // một computed getter
-      nameChange () {
-        return this.nameLogo.split('').reverse().join('')
-      }
-    },
-    watch: {
-      nameChange () {
-        console.log('change')
+      ...mapState('dashboard', ['users']),
+      lists () {
+        return this.toggle
       }
     },
     methods: {
-      doThis () {
-        this.nameLogo = 'New name'
+      ...mapActions('dashboard', ['getUsers']),
+      ...mapActions('auth', ['login']),
+      handleToggle () {
+        this.toggle = !this.toggle
       },
       handleSubmit () {
-        console.log('haha')
+        this.form.validateFields((err, values) => {
+          if (!err) {
+            this.login(values)
+          }
+        })
       }
     }
   }

@@ -1,4 +1,5 @@
-import { TOKEN_KEY, AUTH_INFO } from './constants'
+import { TOKEN_KEY } from './constants'
+// import { TOKEN_KEY, AUTH_INFO } from './constants'
 
 export default {
   getToken: () => {

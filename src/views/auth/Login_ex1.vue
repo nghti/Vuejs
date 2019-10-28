@@ -7,8 +7,6 @@
       id="formLogin"
       class="user-layout-login"
       ref="formLogin"
-      :form="form"
-      @submit.prevent="handleSubmit"
     >
       <a-form-item>
         <a-input
@@ -49,52 +47,11 @@
         </a-button>
       </a-form-item>
     </a-form>
-    <div>
-      <h2 @click="handleToggle">tieu de</h2>
-      <p v-show="toggle">noi dung toggle</p>
-    </div>
-    {{lists}}<br/>
-    {{users}}
   </div>
 </template>
 
 <script>
-  import { mapState, mapActions } from 'vuex'
 
-  export default {
-    data () {
-      return {
-        form: this.$form.createForm(this),
-        toggle: true,
-      }
-    },
-    created () {
-      this.getUsers()
-    },
-    mounted () {
-
-    },
-    computed: {
-      ...mapState('dashboard', ['users']),
-      lists () {
-        return this.toggle
-      }
-    },
-    methods: {
-      ...mapActions('dashboard', ['getUsers']),
-      ...mapActions('auth', ['login']),
-      handleToggle () {
-        this.toggle = !this.toggle
-      },
-      handleSubmit () {
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            this.login(values)
-          }
-        })
-      }
-    }
-  }
 </script>
 
 <style lang="scss" scoped>
