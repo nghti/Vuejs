@@ -1,5 +1,6 @@
 <template>
   <div>
+    <blog-post v-bind:title="title" v-bind:post="post"/>
     <a-list
       itemLayout="horizontal"
       :dataSource="users.data"
@@ -18,7 +19,21 @@
 <script>
   import { mapState, mapActions } from 'vuex'
 
+  import BlogPost from './partials/BlogPost'
+
   export default {
+    components: {
+      BlogPost
+    },
+    data () {
+      return {
+        title: 'hoang tu',
+        post: {
+          id: 1,
+          title: 'My Journey with Vue'
+        }
+      }
+    },
     mounted () {
       this.getUsers()
     },
