@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <blog-post v-bind:title="title" v-bind:post="post"/>
+  <div :style="{ fontSize: postFontSize + 'em' }">
+    <blog-post
+    v-on:enlarge-text="getFontSize"
+    v-bind:title="title"
+    v-bind:getData="getData"
+    v-model="searchText"
+    >
+    noi dung slot
+    </blog-post>
     <a-list
       itemLayout="horizontal"
       :dataSource="users.data"
@@ -31,7 +38,10 @@
         post: {
           id: 1,
           title: 'My Journey with Vue'
-        }
+        },
+        lists: [],
+        postFontSize: 1,
+        searchText: 'hhhh'
       }
     },
     mounted () {
@@ -39,9 +49,15 @@
     },
     computed: {
       ...mapState('dashboard', { users: 'users' }),
+      getData () {
+        return this.lists = this.users.data
+      }
     },
     methods: {
       ...mapActions('dashboard', ['getUsers']),
+      getFontSize (e) {
+        this.postFontSize += e
+      }
     },
   }
 </script>
