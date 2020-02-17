@@ -3,9 +3,9 @@
     <a-layout id="components-layout-demo-custom-trigger">
       <side-bar-menu/>
 
-      <a-layout :style="{ minHeight: '100vh' }">
+      <a-layout class="container">
         <base-header/>
-        <page-header/>
+<!--        <page-header/>-->
         <div class="content-auto">
           <a-layout-content class="content-wrapper">
             <transition name="slide-right" mode="out-in">
@@ -19,14 +19,14 @@
 </template>
 <script>
   import BaseHeader from './partials/Header'
-  import PageHeader from '../components/PageHeader'
+  // import PageHeader from '../components/PageHeader'
   import SideBarMenu from './partials/SideBar'
 
   export default {
     name: 'BaseLayout',
     components: {
       BaseHeader,
-      PageHeader,
+      // PageHeader,
       SideBarMenu
     },
     data () {
@@ -37,6 +37,14 @@
   }
 </script>
 <style>
+  .container {
+    min-height: 100vh;
+    margin-left: 200px;
+    background-color: #424242;
+    width: 100%;
+    padding: 12px;
+    margin-right: auto;
+  }
   .layout-footer {
     text-align: center;
     padding: 0 0 20px;

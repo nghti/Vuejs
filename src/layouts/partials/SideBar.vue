@@ -4,11 +4,12 @@
     collapsible
     v-model="collapsed"
     class="sider-menu"
-    width="256"
+    width="200"
   >
     <div class="sidebar__logo">
-      <img v-if="!collapsed" src="../../assets/images/logo.png" alt="" class="logo-big">
-      <img v-else src="../../assets/images/car.png" alt="" class="logo-small">
+      <div class="sidebar__logo--img">
+      </div>
+      <div class="sidebar__logo--text">Vuejs</div>
     </div>
 
     <a-menu theme="dark" :selectedKeys="selectedKeys" class="menu-auto">
@@ -74,29 +75,19 @@
   }
 
   .sider-menu {
-    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+    overflow: auto;
+    height: 100vh;
+    position: fixed;
+    left: 0;
     z-index: 10;
-    min-height: 100vh;
   }
 
   .sider .ant-layout-sider-children {
     overflow-y: hidden;
   }
 
-  .sidebar__logo {
-    background-color: #273443;
-    height: 64px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .logo-big {
-      height: 64px;
-    }
-
-    .logo-small {
-      height: 35px;
-    }
+  .ant-menu-dark {
+    background-color: #212121!important;
+    border-color: #212121!important;
   }
 </style>

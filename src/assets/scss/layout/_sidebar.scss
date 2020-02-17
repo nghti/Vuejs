@@ -1,2 +1,24 @@
 // sidebar
 //
+.sidebar__logo {
+  background-color: #273443;
+  height: 64px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--img {
+    background-image: url(https://cdn.vuetifyjs.com/images/logos/v-alt.svg);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40px;
+    min-width: 40px;
+    width: 40px;
+    margin-right: 24px;
+  }
+  &--text {
+    color: white;
+  }
+}

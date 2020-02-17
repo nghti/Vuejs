@@ -62,7 +62,7 @@
   .layout-header {
     height: 64px;
     padding: 0 12px 0 0;
-    background: #fff;
+    background: #303030;
     box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
     position: relative;
   }
@@ -77,7 +77,6 @@
       display: inline-block;
       transition: all 0.3s;
       height: 100%;
-      color: rgba(0, 0, 0, 0.65);
 
       &:hover {
         background: rgba(0, 0, 0, 0.025);
@@ -95,5 +94,8 @@
         padding: 4px;
       }
     }
+  }
+  .ant-avatar {
+    background: #1890ff;
   }
 </style>

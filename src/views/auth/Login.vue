@@ -1,8 +1,7 @@
 <template>
   <div class="main">
     <div class="logo">
-      <img src="../../assets/images/logo.png" alt="">
-      <p>DMM Auto 管理画面へログインしてください</p>
+      <p>Login</p>
     </div>
 
     <a-form
@@ -85,8 +84,9 @@
 
 <style lang="scss" scoped>
   .logo {
-    margin: 0 auto;
+    margin: 40px auto;
     text-align: center;
+    text-transform: uppercase;
 
     img {
       height: 115px;
