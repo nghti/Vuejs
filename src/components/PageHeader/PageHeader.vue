@@ -1,18 +1,18 @@
 <template>
   <div class="page-header">
     <div class="page-header-index-wide">
-<!--      <s-breadcrumb />-->
+      <s-breadcrumb />
     </div>
   </div>
 </template>
 
 <script>
-// import Breadcrumb from '../tools/Breadcrumb'
+import Breadcrumb from '../tools/Breadcrumb'
 
 export default {
   name: 'ContentPageHeader',
   components: {
-    // 's-breadcrumb': Breadcrumb
+    's-breadcrumb': Breadcrumb
   },
   props: {
     title: {
@@ -29,12 +29,12 @@ export default {
 
 <style lang="less" scoped>
 .page-header {
-  background: #fff;
-  padding: 16px 32px 0;
-  border-bottom: 1px solid #e8e8e8;
+  padding: 16px 0;
 
   .breadcrumb {
-    margin-bottom: 16px;
+    span {
+      color: white;
+    }
   }
 
   .detail {

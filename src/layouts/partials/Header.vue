@@ -60,11 +60,14 @@
   }
 
   .layout-header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
     height: 64px;
+    width: calc(100% - 224px);
     padding: 0 12px 0 0;
     background: #303030;
     box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-    position: relative;
   }
 
   .user-wrapper {

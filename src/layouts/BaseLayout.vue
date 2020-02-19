@@ -5,8 +5,9 @@
 
       <a-layout class="container">
         <base-header/>
-<!--        <page-header/>-->
         <div class="content-auto">
+          <page-header/>
+          <base-search/>
           <a-layout-content class="content-wrapper">
             <transition name="slide-right" mode="out-in">
               <router-view class="router-view"/>
@@ -19,14 +20,16 @@
 </template>
 <script>
   import BaseHeader from './partials/Header'
-  // import PageHeader from '../components/PageHeader'
+  import BaseSearch from './partials/Search'
   import SideBarMenu from './partials/SideBar'
+  import PageHeader from '../components/PageHeader'
 
   export default {
     name: 'BaseLayout',
     components: {
       BaseHeader,
-      // PageHeader,
+      BaseSearch,
+      PageHeader,
       SideBarMenu
     },
     data () {
@@ -44,6 +47,9 @@
     width: 100%;
     padding: 12px;
     margin-right: auto;
+  }
+  .content-auto {
+    margin-top: 64px;
   }
   .layout-footer {
     text-align: center;

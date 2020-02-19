@@ -17,7 +17,7 @@ export default {
         breadcrumb: [
           {
             link: 'dashboard',
-            name: 'ホーム'
+            name: 'Đà nẵng'
           }
         ]
       }

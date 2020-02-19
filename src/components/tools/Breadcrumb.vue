@@ -35,5 +35,8 @@
   .breadcrumb {
     font-size: 16px;
     font-weight: bold;
+    a {
+      color: white;
+    }
   }
 </style>

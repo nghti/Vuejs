@@ -7,7 +7,7 @@ module.exports = {
     }
   },
   devServer: {
-    host: 'react.test',
+    host: 'vuejs.test',
   },
   css: {
     loaderOptions: {
