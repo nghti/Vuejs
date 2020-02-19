@@ -10,7 +10,7 @@
         <a-dropdown>
         <span class="action ant-dropdown-link user-dropdown-menu">
           <a-avatar icon="user"/>
-          <span> Admin</span>
+<!--          <span> Admin</span>-->
         </span>
           <a-menu slot="overlay" class="user-dropdown-menu-wrapper">
             <a-menu-item>
@@ -62,11 +62,12 @@
   .layout-header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    right: 0;
+    z-index: 9;
     height: 64px;
-    width: calc(100% - 224px);
+    width: calc(100% - 200px);
     padding: 0 12px 0 0;
-    background: #303030;
+    background: #fff;
     box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   }
 

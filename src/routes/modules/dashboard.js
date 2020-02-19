@@ -1,26 +1,30 @@
-import DashboardHome from '../../views/dashboard/Dashboard'
-
 const DashboardGroup = {
   template: `<router-view/>`
 }
 
 export default {
-  path: 'dashboard',
+  path: '',
   component: DashboardGroup,
   children: [
     {
       path: '',
       name: 'dashboard',
-      component: DashboardHome,
-      meta: {
-        title: 'Dashboard Title',
-        breadcrumb: [
-          {
-            link: 'dashboard',
-            name: 'Đà nẵng'
-          }
-        ]
-      }
+      component: () => import('../../views/dashboard/Dashboard'),
+    },
+    {
+      path: '/motel',
+      name: 'motel',
+      component: () => import('../../views/dashboard/Motel'),
+    },
+    {
+      path: '/room',
+      name: 'room',
+      component: () => import('../../views/dashboard/Room'),
+    },
+    {
+      path: '/service',
+      name: 'service',
+      component: () => import('../../views/dashboard/Service'),
     },
   ],
   meta: {

@@ -1,5 +1,5 @@
 <template>
-  <a-form layout="inline" :form="form" @submit="handleSubmit">
+  <a-form class="form-search" layout="inline" :form="form" @submit="handleSubmit">
     <a-form-item>
       <a-input-search placeholder="Tìm sản phẩm mong muốn ..." style="width: 250px" @search="onSearch" />
     </a-form-item>

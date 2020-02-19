@@ -11,7 +11,7 @@ Vue.use(Router)
 const AdminRoutes = [
   {
     path: '/',
-    redirect: 'dashboard',
+    // redirect: 'dashboard',
     name: 'root.index',
     component: BaseLayout,
     children: [
@@ -21,6 +21,10 @@ const AdminRoutes = [
   AuthRoute,
   {
     path: '*',
+    redirect: '/404',
+  },
+  {
+    path: '/404',
     component: () => import('../views/errors/404')
   }
 ]

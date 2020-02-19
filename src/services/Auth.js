@@ -10,7 +10,7 @@ class AuthService {
   }
 
   logout () {
-    return Client().post(`${this.uri}/logout`)
+    return Client().post('logout')
   }
 }
 

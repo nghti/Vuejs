@@ -7,30 +7,32 @@
     width="200"
   >
     <div class="sidebar__logo">
-      <div class="sidebar__logo--img">
-      </div>
-      <div class="sidebar__logo--text">Vuejs</div>
+      <router-link to="/" class="nav-link">
+        <div class="sidebar__logo--img">
+        </div>
+      </router-link>
+      <div class="sidebar__logo--text">BaTu</div>
     </div>
 
     <a-menu theme="dark" :selectedKeys="selectedKeys" class="menu-auto">
-      <a-menu-item key="/dashboard/">
-        <router-link to="/dashboard" class="nav-link">
+      <a-menu-item key="/motel/">
+        <router-link to="/motel" class="nav-link">
           <a-icon type="home"/>
-          <span>{{ $t('nav.dashboard') }}</span>
+          <span>{{ $t('nav.motel') }}</span>
         </router-link>
       </a-menu-item>
 
-      <a-menu-item key="/assessments/">
-        <router-link to="/assessments" class="nav-link">
+      <a-menu-item key="/room/">
+        <router-link to="/room" class="nav-link">
           <a-icon type="car"/>
-          <span>{{ $t('nav.assessment') }}</span>
+          <span>{{ $t('nav.room') }}</span>
         </router-link>
       </a-menu-item>
 
-      <a-menu-item key="/orders/">
-        <router-link to="/orders" class="nav-link">
+      <a-menu-item key="/service/">
+        <router-link to="/service" class="nav-link">
           <a-icon type="credit-card"/>
-          <span>{{ $t('nav.order') }}</span>
+          <span>{{ $t('nav.service') }}</span>
         </router-link>
       </a-menu-item>
     </a-menu>
@@ -69,6 +71,9 @@
 </script>
 
 <style lang="scss" scoped>
+  .sidebar__logo {
+    background: #002140;
+  }
   .menu-auto {
     height: calc(100vh - 64px);
     overflow: auto;
@@ -84,10 +89,5 @@
 
   .sider .ant-layout-sider-children {
     overflow-y: hidden;
-  }
-
-  .ant-menu-dark {
-    background-color: #212121!important;
-    border-color: #212121!important;
   }
 </style>
