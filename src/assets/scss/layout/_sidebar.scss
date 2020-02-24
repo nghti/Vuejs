@@ -3,9 +3,9 @@
 .sidebar__logo {
   background-color: #273443;
   height: 64px;
-  padding: 8px 16px;
+  padding: 8px 20px;
+  overflow: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
 
   &--img {
@@ -16,9 +16,9 @@
     height: 40px;
     min-width: 40px;
     width: 40px;
-    margin-right: 24px;
   }
   &--text {
     color: white;
+    margin-left: 24px;
   }
 }

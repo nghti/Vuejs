@@ -6,9 +6,9 @@ module.exports = {
       }
     }
   },
-  devServer: {
-    host: 'vuejs.test',
-  },
+  // devServer: {
+  //   host: 'vuejs.test',
+  // },
   css: {
     loaderOptions: {
       less: {

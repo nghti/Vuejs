@@ -6,9 +6,9 @@
         <div class="item__img">
           <img class="item__img--fix" :src="item.img" alt="">
         </div>
-        <a-card :title="item.title">
-          <h4>Phòng trọ cao cấp</h4>
-          <span>2.300.000 đ/tháng</span>
+        <a-card>
+          <h4>{{item.title}}</h4>
+          <span>{{item.money}}</span>
         </a-card>
       </a-list-item>
     </a-list>

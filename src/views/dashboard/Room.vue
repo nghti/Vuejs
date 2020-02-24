@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-table class="nt-table" :columns="columns" :dataSource="this.users" bordered rowKey="id" >
+    <a-table v-if="isShow" class="nt-table" :columns="columns" :dataSource="dataSource" bordered rowKey="id" >
       <template
         v-for="col in ['first_name', 'email']"
         :slot="col"
@@ -35,7 +35,7 @@
         <a-popconfirm
           v-if="users.length"
           title="Sure to delete?"
-          @confirm="() => onDelete(record.key)"
+          @confirm="() => onDelete(record.id)"
         >
           <a href="javascript:;">Delete</a>
         </a-popconfirm>
@@ -45,19 +45,20 @@
 </template>
 <script>
   import { mapState, mapActions } from 'vuex'
+  import _ from 'lodash'
 
   const columns = [
     {
-      title: 'first_name',
-      dataIndex: 'first_name',
+      title: 'title',
+      dataIndex: 'title',
       width: '25%',
-      scopedSlots: { customRender: 'first_name' },
+      scopedSlots: { customRender: 'title' },
     },
     {
-      title: 'email',
-      dataIndex: 'email',
+      title: 'money',
+      dataIndex: 'money',
       width: '40%',
-      scopedSlots: { customRender: 'email' },
+      scopedSlots: { customRender: 'money' },
     },
     {
       title: 'operation',
@@ -75,7 +76,9 @@
     data () {
       // this.cacheData = data.map(item => ({ ...item }))
       return {
+        isShow: false,
         columns,
+        dataSource: []
       }
     },
     mounted () {
@@ -84,8 +87,14 @@
     computed: {
       ...mapState('dashboard', { users: 'users' })
     },
+    watch: {
+      users (data) {
+        this.dataSource = _.merge(this.dataSource, data)
+        this.$set(this, 'isShow', true)
+      }
+    },
     methods: {
-      ...mapActions('dashboard', ['getUsers']),
+      ...mapActions('dashboard', ['getUsers', 'delUsers']),
       handleChange (value, key, column) {
         const newData = [...this.data]
         const target = newData.filter(item => key === item.key)[0]
@@ -94,9 +103,10 @@
           this.data = newData
         }
       },
-      onDelete (key) {
-        const data = [...this.data]
-        this.data = data.filter(item => item.key !== key)
+      onDelete (id) {
+        // const data = [...this.dataSource]
+        // this.dataSource = data.filter(item => item.id !== id)
+        this.delUsers(id)
       },
       edit (key) {
         const newData = [...this.data]

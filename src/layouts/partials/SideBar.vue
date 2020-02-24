@@ -4,7 +4,6 @@
     collapsible
     v-model="collapsed"
     class="sider-menu"
-    width="200"
   >
     <div class="sidebar__logo">
       <router-link to="/" class="nav-link">
@@ -13,7 +12,6 @@
       </router-link>
       <div class="sidebar__logo--text">BaTu</div>
     </div>
-
     <a-menu theme="dark" :selectedKeys="selectedKeys" class="menu-auto">
       <a-menu-item key="/motel/">
         <router-link to="/motel" class="nav-link">
@@ -74,19 +72,19 @@
   .sidebar__logo {
     background: #002140;
   }
+  .ant-layout-sider-collapsed {
+    .sidebar__logo--text {
+      opacity: 0;
+    }
+  }
   .menu-auto {
     height: calc(100vh - 64px);
     overflow: auto;
   }
-
   .sider-menu {
-    overflow: auto;
-    height: 100vh;
-    position: fixed;
     left: 0;
     z-index: 10;
   }
-
   .sider .ant-layout-sider-children {
     overflow-y: hidden;
   }

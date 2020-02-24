@@ -27,6 +27,6 @@ export default {
   // },
 
   getBaseApiUrl () {
-    return `${process.env.VUE_APP_BASE_API_URL}/api` || 'http://localhost/api'
+    return `${process.env.VUE_APP_BASE_API_URL}` || 'http://localhost/api'
   }
 }

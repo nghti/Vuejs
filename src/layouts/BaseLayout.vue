@@ -39,7 +39,6 @@
 <style>
   .container {
     min-height: 100vh;
-    margin-left: 200px;
     width: 100%;
     padding: 12px;
     margin-right: auto;
