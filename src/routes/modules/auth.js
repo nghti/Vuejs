@@ -1,7 +1,7 @@
 export default {
   path: '/login',
   name: 'auth.login',
-  component: () => import('../../views/auth/Login'),
+  component: () => import('../../pages/auth/Login'),
   meta: {
     public: true,
     onlyWhenLoggedOut: true

@@ -1,4 +1,4 @@
-import AuthService from '../../../services/Auth'
+import AuthService from '../../../api/Auth'
 import { error, success } from '../../../utils/toastr'
 import router from '../../../routes'
 

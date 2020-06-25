@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import App from './views/App'
+import App from './pages/App'
 import Antd from 'ant-design-vue'
 import 'ant-design-vue/dist/antd.css'
 
-import i18n from './locales/i18n'
+import i18n from './i18n/i18n'
 import router from './routes'
 import store from './store'
 import './assets/scss/main.scss'

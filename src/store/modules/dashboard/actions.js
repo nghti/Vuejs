@@ -1,4 +1,4 @@
-import DashboardService from '../../../services/dashboard'
+import DashboardService from '../../../api/dashboard'
 import { error } from '../../../utils/toastr'
 
 export default {

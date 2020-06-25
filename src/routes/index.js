@@ -25,7 +25,7 @@ const AdminRoutes = [
   },
   {
     path: '/404',
-    component: () => import('../views/errors/404')
+    component: () => import('../pages/errors/404')
   }
 ]
 
