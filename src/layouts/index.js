@@ -1,5 +1,5 @@
-import BaseLayout from './BaseLayout'
+import BaseLayout from './BaseLayout';
 
 export default {
-  BaseLayout
-}
+  BaseLayout,
+};

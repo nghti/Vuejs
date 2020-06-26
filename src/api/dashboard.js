@@ -1,12 +1,12 @@
-import Client from '../utils/client'
+import Client from '../utils/client';
 
 class DashboardService {
-  getUsers () {
-    return Client().get(`users`)
+  getUsers() {
+    return Client().get(`users`);
   }
-  delUsers (payload) {
-    return Client().delete(`users_del`)
+  delUsers(payload) {
+    return Client().delete(`users_del`);
   }
 }
 
-export default new DashboardService()
+export default new DashboardService();

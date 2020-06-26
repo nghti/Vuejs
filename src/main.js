@@ -1,32 +1,32 @@
-import Vue from 'vue'
-import App from './pages/App'
-import Antd from 'ant-design-vue'
-import 'ant-design-vue/dist/antd.css'
+import Vue from 'vue';
+import App from './pages/App';
+import Antd from 'ant-design-vue';
+import 'ant-design-vue/dist/antd.css';
 
-import i18n from './i18n/i18n'
-import router from './routes'
-import store from './store'
-import './assets/scss/main.scss'
+import i18n from './i18n/i18n';
+import router from './routes';
+import store from './store';
+import './assets/scss/main.scss';
 
 class Main {
   static baseConfig = () => {
-    Vue.use(Antd)
-    Vue.config.productionTip = false
-  }
+    Vue.use(Antd);
+    Vue.config.productionTip = false;
+  };
 
   static renderApp = () => {
     new Vue({
       i18n,
       router,
       store,
-      render: h => h(App),
-    }).$mount('#app')
-  }
+      render: (h) => h(App),
+    }).$mount('#app');
+  };
 
-  static run () {
-    Main.baseConfig()
-    Main.renderApp()
+  static run() {
+    Main.baseConfig();
+    Main.renderApp();
   }
 }
 
-Main.run()
+Main.run();

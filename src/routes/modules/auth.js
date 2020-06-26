@@ -4,6 +4,6 @@ export default {
   component: () => import('../../pages/auth/Login'),
   meta: {
     public: true,
-    onlyWhenLoggedOut: true
-  }
-}
+    onlyWhenLoggedOut: true,
+  },
+};

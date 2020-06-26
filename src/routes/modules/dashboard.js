@@ -1,6 +1,6 @@
 const DashboardGroup = {
-  template: `<router-view/>`
-}
+  template: `<router-view/>`,
+};
 
 export default {
   path: '',
@@ -29,5 +29,5 @@ export default {
   ],
   meta: {
     public: false,
-  }
-}
+  },
+};

@@ -1,17 +1,17 @@
-import Vue from 'vue'
-import VueI18n from 'vue-i18n'
+import Vue from 'vue';
+import VueI18n from 'vue-i18n';
 
-import jaLocale from './ja'
+import jaLocale from './ja';
 
-Vue.use(VueI18n)
+Vue.use(VueI18n);
 
 const messages = {
   ja: {
-    ...jaLocale
-  }
-}
+    ...jaLocale,
+  },
+};
 
-const DEFAULT_LOCALE = 'ja'
+const DEFAULT_LOCALE = 'ja';
 
 /**
  * Define I18n instance.
@@ -22,11 +22,11 @@ const i18n = new VueI18n({
   locale: DEFAULT_LOCALE,
   fallbackLocale: DEFAULT_LOCALE,
   messages,
-  silentTranslationWarn: true
-})
+  silentTranslationWarn: true,
+});
 
 window.trans = (key, params = false) => {
-  return i18n.t(key, params)
-}
+  return i18n.t(key, params);
+};
 
-export default i18n
+export default i18n;

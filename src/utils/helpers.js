@@ -1,17 +1,17 @@
-import { TOKEN_KEY } from './constants'
+import { TOKEN_KEY } from './constants';
 // import { TOKEN_KEY, AUTH_INFO } from './constants'
 
 export default {
   getToken: () => {
-    return localStorage.getItem(TOKEN_KEY) || null
+    return localStorage.getItem(TOKEN_KEY) || null;
   },
 
   saveToken: (accessToken) => {
-    localStorage.setItem(TOKEN_KEY, accessToken)
+    localStorage.setItem(TOKEN_KEY, accessToken);
   },
 
   removeToken: () => {
-    localStorage.removeItem(TOKEN_KEY)
+    localStorage.removeItem(TOKEN_KEY);
   },
 
   // saveAuthInfo: (user) => {
@@ -26,7 +26,7 @@ export default {
   //   localStorage.removeItem(AUTH_INFO)
   // },
 
-  getBaseApiUrl () {
-    return `${process.env.VUE_APP_BASE_API_URL}/api` || 'http://localhost/api'
-  }
-}
+  getBaseApiUrl() {
+    return `${process.env.VUE_APP_BASE_API_URL}/api` || 'http://localhost/api';
+  },
+};
