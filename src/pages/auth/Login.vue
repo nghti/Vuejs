@@ -1,125 +1,87 @@
 <template>
-  <div class="main">
-    <div class="logo">
-      <p>Login</p>
-    </div>
-
-    <a-form
-      id="formLogin"
-      class="user-layout-login"
-      ref="formLogin"
-      :form="form"
-      @submit.prevent="handleSubmit"
-    >
-      <a-form-item>
-        <a-input
-          size="large"
-          type="text"
-          placeholder="メールアドレス / ニックネーム"
-          v-decorator="[
-                'username',
-                {rules: [{ required: true, message:'メールアドレスを入力してください。' }], validateTrigger: 'change'}
-              ]"
-        >
-          <a-icon slot="prefix" type="user" :style="{ color: 'rgba(0,0,0,.25)' }"/>
-        </a-input>
-      </a-form-item>
-
-      <a-form-item>
-        <a-input
-          size="large"
-          type="password"
-          autocomplete="false"
-          placeholder="パスワード"
-          v-decorator="[
-                'password',
-                {rules: [{ required: true, message: 'パスワードを入力してください。' }], validateTrigger: 'change'}
-              ]"
-        >
-          <a-icon slot="prefix" type="lock" :style="{ color: 'rgba(0,0,0,.25)' }"/>
-        </a-input>
-      </a-form-item>
-
-      <a-form-item style="margin-top:24px">
-        <a-button
-          size="large"
-          type="primary"
-          htmlType="submit"
-          class="login-button"
-          :loading="state.loginBtn"
-          :disabled="state.loginBtn"
-        >ログイン
-        </a-button>
-      </a-form-item>
-    </a-form>
-  </div>
+  <a-form id="components-form-demo-normal-login" :form="form" class="login-form" @submit.prevent="handleSubmit">
+    <a-form-item>
+      <a-input
+        v-decorator="['username', { rules: [{ required: true, message: 'Please input your username!' }] }]"
+        placeholder="Username"
+      >
+        <a-icon slot="prefix" type="user" style="color: rgba(0, 0, 0, 0.25);" />
+      </a-input>
+    </a-form-item>
+    <a-form-item>
+      <a-input
+        v-decorator="['password', { rules: [{ required: true, message: 'Please input your Password!' }] }]"
+        type="password"
+        placeholder="Password"
+      >
+        <a-icon slot="prefix" type="lock" style="color: rgba(0, 0, 0, 0.25);" />
+      </a-input>
+    </a-form-item>
+    <a-form-item>
+      <a-checkbox
+        v-decorator="[
+          'remember',
+          {
+            valuePropName: 'checked',
+            initialValue: true,
+          },
+        ]"
+      >
+        Remember me
+      </a-checkbox>
+      <a class="login-form-forgot" href="">
+        Forgot password
+      </a>
+      <a-button type="primary" html-type="submit" class="login-form-button">
+        Log in
+      </a-button>
+      Or
+      <a href="">
+        register now!
+      </a>
+    </a-form-item>
+  </a-form>
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+import { mapActions } from 'vuex';
 
-  export default {
-    name: 'login',
-    data () {
-      return {
-        form: this.$form.createForm(this),
-        state: {
-          time: 60,
-          loginBtn: false,
-        }
-      }
-    },
-    methods: {
-      ...mapActions('auth', ['login']),
-      handleSubmit () {
-        this.form.validateFields((err, values) => {
-          if (!err) {
-            this.login(values)
-          }
-        })
+export default {
+  name: 'login',
+  data() {
+    return {
+      form: this.$form.createForm(this),
+      state: {
+        time: 60,
+        loginBtn: false,
       },
-    }
-  }
+    };
+  },
+  methods: {
+    ...mapActions('auth', ['login']),
+    handleSubmit() {
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          this.login(values);
+        }
+      });
+    },
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-  .logo {
-    margin: 40px auto;
-    text-align: center;
-    text-transform: uppercase;
-
-    img {
-      height: 115px;
-    }
-
-    p {
-      color: #95A7B7;
-      font-size: 18px;
-    }
-  }
-
-  .main {
-    width: 100%;
-    min-height: 100%;
-    background: #f0f2f5 url(../../assets/images/background.svg) no-repeat 50%;
-    background-size: 100%;
-    padding: 110px 0 144px;
-    position: relative;
-  }
-
-  .user-layout-login {
-    margin: 0 auto;
-    width: 350px;
-
-    label {
-      font-size: 14px;
-    }
-
-    button.login-button {
-      padding: 0 15px;
-      font-size: 16px;
-      height: 40px;
-      width: 100%;
-    }
-  }
+<style>
+.login-form {
+  max-width: 300px;
+  margin: auto;
+  padding-top: 150px;
+}
+#components-form-demo-normal-login .login-form {
+  max-width: 300px;
+}
+#components-form-demo-normal-login .login-form-forgot {
+  float: right;
+}
+#components-form-demo-normal-login .login-form-button {
+  width: 100%;
+}
 </style>

@@ -1,73 +1,130 @@
 <template>
   <div>
-    <base-search/>
-    <a-list :grid="{ gutter: 16, xs: 3 }" :dataSource="users">
-      <a-list-item slot="renderItem" slot-scope="item">
-        <div class="item__img">
-          <img class="item__img--fix" :src="item.img" alt="">
-        </div>
-        <a-card>
-          <h4>{{item.title}}</h4>
-          <span>{{item.money}}</span>
-        </a-card>
-      </a-list-item>
-    </a-list>
+    <h2 class="fs-24">Slider</h2>
+    <a-carousel autoplay>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+    </a-carousel>
+    <a-carousel autoplay>
+      <div>
+        <img src="http://placekitten.com/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="http://placekitten.com/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="http://placekitten.com/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="http://placekitten.com/1280/160" alt="title" />
+      </div>
+    </a-carousel>
+    <a-carousel autoplay>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+      <div>
+        <img src="https://picsum.photos/1280/160" alt="title" />
+      </div>
+    </a-carousel>
+    <h2 class="fs-24" @click="toggleClass">Workplace</h2>
+    <div v-show="this.toggle">
+      <p>那是一种内在的东西，他们到达不了，也无法触及的</p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+      <p>
+        段落示意：蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。蚂蚁金服设计平台
+        ant.design，用最小的工作量，无缝接入蚂蚁金服生态，提供跨越设计与开发的体验解决方案。
+      </p>
+    </div>
   </div>
 </template>
+
 <script>
-  import { mapState, mapActions } from 'vuex'
-  import BaseSearch from '../../components/Search'
-
-  export default {
-    components: {
-      BaseSearch
+export default {
+  data() {
+    return {
+      toggle: true,
+    };
+  },
+  methods: {
+    toggleClass() {
+      this.toggle = !this.toggle;
     },
-    data () {
-      return {
-
-      }
-    },
-    mounted () {
-      this.getUsers()
-    },
-    computed: {
-      ...mapState('dashboard', { users: 'users' }),
-    },
-    methods: {
-      ...mapActions('dashboard', ['getUsers']),
-    },
-  }
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  .cart {
-    &__title {
-      font-size: 20px;
-    }
-    &__text {
-      font-size: 20px;
-      color: #bdbdbd;
-      padding: 12px 0;
-    }
-  }
-  .item__img {
-    height: 200px;
-    &--fix {
-      margin-right: auto;
-      margin-left: auto;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-  .ant-card {
-    /*background: transparent;*/
-    /*color: white;*/
-  }
-  .ant-card-body {
-    padding: 12px;
-  }
-  .ant-card-bordered {
-    border: 1px solid #7c7c7c;
-  }
+.ant-carousel >>> .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel >>> .slick-slide h3 {
+  color: #fff;
+}
 </style>
